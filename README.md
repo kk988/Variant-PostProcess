@@ -1,4 +1,4 @@
-# Variant-PostProcess (v1)
+# Variant-PostProcess
 
 To use clone version to someplace on LUNA. Then to run
 

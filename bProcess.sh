@@ -21,7 +21,7 @@ echo $PROJECTDIR/*_sample_pairing.txt
 echo $projectNo
 
 bsub -J POST_$projectNo -n 24 -R "rusage[mem=64]" -o LSF.POST/ \
-    ~/Code/Pipelines/CBE/Variant/PostProcessV1/postProcess.sh \
+    $SDIR/postProcess.sh \
     $PROJECTDIR/*_sample_pairing.txt \
     $PIPELINEDIR
 
