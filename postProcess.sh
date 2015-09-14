@@ -10,6 +10,13 @@ if [ $# -ne 2 ]; then
 	exit
 fi
 
+# check to see if python, samtools, tabix are in path. If not grab from paths.sh 
+type python2.7 > /dev/null 2>&1 || { echo >&1 "[WARNING] Python2.7 not in current path. Will export python in paths.sh"; export PATH=$PATH:$PYTHON_PATH; } 
+type tabix > /dev/null 2>&1 || { echo >&1 "[WARNING] tabix not in current path. Will export python in paths.sh"; export PATH=$PATH:$TABIX_PATH; }
+type samtools > /dev/null 2>&1 || { echo >&1 "[WARNING] samtools not in current path. Will export python in paths.sh"; export PATH=$PATH:$SAMTOOLS_PATH; }
+
+
+
 PAIRING=$1
 PIPEOUT=$2
 PIPEOUT=$(echo $PIPEOUT | sed 's/\/$//')
